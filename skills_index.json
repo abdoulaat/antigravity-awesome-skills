@@ -3680,6 +3680,16 @@
     "date_added": "2026-02-27"
   },
   {
+    "id": "taste-skill",
+    "path": "skills/taste-skill",
+    "category": "uncategorized",
+    "name": "design-taste-frontend",
+    "description": "Senior UI/UX Engineer skill. Architect digital interfaces overriding default LLM biases. Enforces metric-based rules, strict component architecture, CSS hardware acceleration, and balanced design engineering.",
+    "risk": "safe",
+    "source": "community",
+    "date_added": "2026-04-06"
+  },
+  {
     "id": "development",
     "path": "skills/development",
     "category": "workflow-bundle",
@@ -4540,6 +4550,16 @@
     "date_added": "2026-02-27"
   },
   {
+    "id": "output-skill",
+    "path": "skills/output-skill",
+    "category": "uncategorized",
+    "name": "full-output-enforcement",
+    "description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output.",
+    "risk": "safe",
+    "source": "community",
+    "date_added": "2026-04-06"
+  },
+  {
     "id": "full-stack-orchestration-full-stack-feature",
     "path": "skills/full-stack-orchestration-full-stack-feature",
     "category": "uncategorized",
@@ -5070,6 +5090,16 @@
     "date_added": "2026-02-27"
   },
   {
+    "id": "soft-skill",
+    "path": "skills/soft-skill",
+    "category": "uncategorized",
+    "name": "high-end-visual-design",
+    "description": "Principal UI/UX Architect & Motion Choreographer skill for Awwwards-tier digital experiences. Enforces haptic depth, cinematic spatial rhythm, obsessive micro-interactions, and flawless fluid motion.",
+    "risk": "safe",
+    "source": "community",
+    "date_added": "2026-04-06"
+  },
+  {
     "id": "hosted-agents-v2-py",
     "path": "skills/hosted-agents-v2-py",
     "category": "uncategorized",
@@ -5248,6 +5278,16 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27"
+  },
+  {
+    "id": "brutalist-skill",
+    "path": "skills/brutalist-skill",
+    "category": "uncategorized",
+    "name": "industrial-brutalist-ui",
+    "description": "Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy dashboards, portfolios, or editorial sites that need to feel like declassified blueprints.",
+    "risk": "safe",
+    "source": "community",
+    "date_added": "2026-04-06"
   },
   {
     "id": "infinite-gratitude",
@@ -6008,6 +6048,16 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27"
+  },
+  {
+    "id": "minimalist-skill",
+    "path": "skills/minimalist-skill",
+    "category": "uncategorized",
+    "name": "minimalist-ui",
+    "description": "Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows.",
+    "risk": "safe",
+    "source": "community",
+    "date_added": "2026-04-06"
   },
   {
     "id": "miro-automation",
@@ -7330,6 +7380,16 @@
     "date_added": "2026-02-27"
   },
   {
+    "id": "redesign-skill",
+    "path": "skills/redesign-skill",
+    "category": "uncategorized",
+    "name": "redesign-existing-projects",
+    "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS.",
+    "risk": "safe",
+    "source": "community",
+    "date_added": "2026-04-06"
+  },
+  {
     "id": "reference-builder",
     "path": "skills/reference-builder",
     "category": "uncategorized",
@@ -8238,6 +8298,16 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27"
+  },
+  {
+    "id": "stitch-skill",
+    "path": "skills/stitch-skill",
+    "category": "uncategorized",
+    "name": "stitch-design-taste",
+    "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards \u2014 strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.",
+    "risk": "safe",
+    "source": "community",
+    "date_added": "2026-04-06"
   },
   {
     "id": "stitch-ui-design",
