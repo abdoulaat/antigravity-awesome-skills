@@ -11,7 +11,7 @@ define( 'LAPOSTE_VERSION', '1.0.0' );
 define( 'LAPOSTE_DIR', get_template_directory() );
 define( 'LAPOSTE_URI', get_template_directory_uri() );
 
-/* ─── Theme Support ────────────────────────────────────────────────── */
+/* ─── Theme Support ─────────────────────────────────────────── */
 function laposte_setup() {
     load_theme_textdomain( 'laposte', LAPOSTE_DIR . '/languages' );
 
@@ -42,13 +42,13 @@ function laposte_setup() {
 }
 add_action( 'after_setup_theme', 'laposte_setup' );
 
-/* ─── Content Width ──────────────────────────────────────────────── */
+/* ─── Content Width ─────────────────────────────────────────── */
 function laposte_content_width() {
     $GLOBALS['content_width'] = 1340;
 }
 add_action( 'after_setup_theme', 'laposte_content_width', 0 );
 
-/* ─── Enqueue Scripts & Styles ──────────────────────────────────────────── */
+/* ─── Enqueue Scripts & Styles ──────────────────────────────── */
 function laposte_enqueue_assets() {
     // Google Fonts
     wp_enqueue_style(
@@ -89,14 +89,6 @@ function laposte_enqueue_assets() {
         ] );
     }
 
-    // Global CSS
-    wp_enqueue_style(
-        'laposte-global',
-        LAPOSTE_URI . '/assets/css/global.css',
-        [ 'laposte-style' ],
-        LAPOSTE_VERSION
-    );
-
     // Global JS (nav, accessibility)
     wp_enqueue_script(
         'laposte-global',
@@ -113,7 +105,7 @@ function laposte_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'laposte_enqueue_assets' );
 
-/* ─── Widget Areas ────────────────────────────────────────────────── */
+/* ─── Widget Areas ──────────────────────────────────────────── */
 function laposte_widgets_init() {
     register_sidebar( [
         'name'          => __( 'Sidebar', 'laposte' ),
@@ -150,7 +142,7 @@ function laposte_widgets_init() {
 }
 add_action( 'widgets_init', 'laposte_widgets_init' );
 
-/* ─── Custom Post Types ─────────────────────────────────────────────── */
+/* ─── Custom Post Types ─────────────────────────────────────── */
 function laposte_register_post_types() {
     // Agences
     register_post_type( 'laposte_agence', [
@@ -182,7 +174,7 @@ function laposte_register_post_types() {
 }
 add_action( 'init', 'laposte_register_post_types' );
 
-/* ─── Custom Taxonomies ─────────────────────────────────────────────── */
+/* ─── Custom Taxonomies ─────────────────────────────────────── */
 function laposte_register_taxonomies() {
     register_taxonomy( 'laposte_region', 'laposte_agence', [
         'labels'       => [
@@ -196,7 +188,7 @@ function laposte_register_taxonomies() {
 }
 add_action( 'init', 'laposte_register_taxonomies' );
 
-/* ─── Options Page (ACF ou custom) ─────────────────────────────────────────── */
+/* ─── Options Page (ACF ou custom) ─────────────────────────── */
 function laposte_register_options() {
     register_setting( 'laposte_options', 'laposte_livraisons_jour',   [ 'default' => '2 847' ] );
     register_setting( 'laposte_options', 'laposte_nb_agences',        [ 'default' => '647' ] );
@@ -241,24 +233,25 @@ function laposte_render_options_page() { ?>
 </div>
 <?php }
 
-/* ─── Template helpers ────────────────────────────────────────────────── */
+/* ─── Template helpers ──────────────────────────────────────── */
 function laposte_get_opt( $key, $default = '' ) {
     return esc_html( get_option( $key, $default ) );
 }
 
-/* ─── AJAX: tracking colis ─────────────────────────────────────────────── */
+/* ─── AJAX: tracking colis ──────────────────────────────────── */
 function laposte_ajax_tracking() {
     check_ajax_referer( 'laposte_nonce', 'nonce' );
     $numero = sanitize_text_field( $_POST['numero'] ?? '' );
     if ( empty( $numero ) ) {
         wp_send_json_error( [ 'message' => __( 'Numéro de suivi manquant.', 'laposte' ) ] );
     }
+    // TODO: intégrer l'API de suivi de La Poste
     wp_send_json_success( [ 'redirect' => home_url( '/suivi-colis/?numero=' . urlencode( $numero ) ) ] );
 }
 add_action( 'wp_ajax_laposte_tracking',        'laposte_ajax_tracking' );
 add_action( 'wp_ajax_nopriv_laposte_tracking', 'laposte_ajax_tracking' );
 
-/* ─── SEO: meta description auto ─────────────────────────────────────────── */
+/* ─── SEO: meta description auto ───────────────────────────── */
 function laposte_meta_description() {
     if ( is_front_page() ) {
         echo '<meta name="description" content="' . esc_attr__( 'Services postaux, financiers et numériques pour tous les Sénégalais. Suivi de colis, transferts d\'argent, courrier express.', 'laposte' ) . '">' . "\n";
@@ -269,7 +262,7 @@ function laposte_meta_description() {
 }
 add_action( 'wp_head', 'laposte_meta_description' );
 
-/* ─── Remove WordPress emoji bloat ─────────────────────────────────────────── */
+/* ─── Remove WordPress emoji bloat ─────────────────────────── */
 remove_action( 'wp_head',             'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles',     'print_emoji_styles' );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );

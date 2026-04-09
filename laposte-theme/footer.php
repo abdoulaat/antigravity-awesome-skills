@@ -32,6 +32,7 @@
         </div>
       </div>
 
+      <!-- Colonnes liens -->
       <div class="lp-footer__col">
         <h4 class="lp-footer__col-title"><?php _e('Services','laposte'); ?></h4>
         <ul>
@@ -66,6 +67,7 @@
 
     </div>
 
+    <!-- Footer bottom -->
     <div class="lp-footer__bottom">
       <p class="lp-footer__copyright">
         &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
